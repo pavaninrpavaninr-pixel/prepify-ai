@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Home - Prepify AI{% endblock %}
+{% block content %}
+<div class="p-5 mb-4 hero-section rounded-3">
+  <h1 class="display-6 fw-bold">AI-Powered Interview & Coding Platform</h1>
+  <p class="lead">Learn, Practice, Get Interview-Ready.</p>
+  <a href="{{ url_for('dashboard') }}" class="btn btn-light btn-lg">Get Started</a>
+</div>
+
+<div class="row g-4">
+  <div class="col-md-4">
+    <div class="card h-100 feature-card">
+      <div class="card-body text-center">
+        <h5 class="card-title">AI Chatbot</h5>
+        <p class="card-text">Ask Prep-Pro anything about AI/ML or your code.</p>
+        <span class="text-primary">Use the chat bubble ↘</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100 feature-card">
+      <div class="card-body text-center">
+        <h5 class="card-title">Dashboard</h5>
+        <p class="card-text">Track your quiz scores and coding progress.</p>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-outline-primary btn-sm">Check Progress</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100 feature-card">
+      <div class="card-body text-center">
+        <h5 class="card-title">Learn AI/ML</h5>
+        <p class="card-text">Structured notes on core AI & ML concepts.</p>
+        <a href="{{ url_for('aiml') }}" class="btn btn-outline-primary btn-sm">Start Learning</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100 feature-card">
+      <div class="card-body text-center">
+        <h5 class="card-title">Coding Practice</h5>
+        <p class="card-text">Solve problems with instant feedback.</p>
+        <a href="{{ url_for('coding') }}" class="btn btn-outline-primary btn-sm">Practice Coding</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100 feature-card">
+      <div class="card-body text-center">
+        <h5 class="card-title">AI Interview Analyzer</h5>
+        <p class="card-text">Voice-based mock interview with feedback.</p>
+        <a href="{{ url_for('vapi') }}" class="btn btn-outline-primary btn-sm">Start Interview</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100 feature-card">
+      <div class="card-body text-center">
+        <h5 class="card-title">Take a Quiz</h5>
+        <p class="card-text">Quick assessments with instant grading.</p>
+        <a href="{{ url_for('quiz_page') }}" class="btn btn-outline-primary btn-sm">Start Quiz</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

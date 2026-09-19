@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Learn AI/ML - Prepify AI{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="col-md-3">
+    <div class="list-group" id="topic-list">
+      <a href="#intro" class="list-group-item list-group-item-action active">Introduction to AI & ML</a>
+      <a href="#supervised" class="list-group-item list-group-item-action">Supervised vs Unsupervised</a>
+      <a href="#rl" class="list-group-item list-group-item-action">Reinforcement Learning</a>
+      <a href="#nn" class="list-group-item list-group-item-action">Neural Networks</a>
+      <a href="#dl" class="list-group-item list-group-item-action">Deep Learning</a>
+      <a href="#algos" class="list-group-item list-group-item-action">ML Algorithms</a>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <section id="intro" class="mb-5">
+      <h4>Introduction to AI & ML</h4>
+      <p><strong>Artificial Intelligence (AI)</strong> is the science of building machines that can perform tasks
+      requiring human-like intelligence — understanding language, recognizing patterns, and making decisions.</p>
+      <p><strong>Machine Learning (ML)</strong> is a subset of AI where systems learn patterns from data instead
+      of following hand-written rules.</p>
+      <p><em>Applications:</em> self-driving cars, speech recognition, recommendation systems, medical diagnosis.</p>
+    </section>
+    <section id="supervised" class="mb-5">
+      <h4>Supervised vs Unsupervised Learning</h4>
+      <p><strong>Supervised learning</strong> trains on labeled data (e.g. classification, regression).
+      <strong>Unsupervised learning</strong> finds structure in unlabeled data (e.g. clustering, dimensionality reduction).</p>
+    </section>
+    <section id="rl" class="mb-5">
+      <h4>Reinforcement Learning</h4>
+      <p>An agent learns by interacting with an environment, receiving rewards or penalties for its actions,
+      and improving its policy over time.</p>
+    </section>
+    <section id="nn" class="mb-5">
+      <h4>Neural Networks</h4>
+      <p>Layers of interconnected nodes ("neurons") that transform input data through weighted connections
+      and activation functions to learn complex, non-linear patterns.</p>
+    </section>
+    <section id="dl" class="mb-5">
+      <h4>Deep Learning</h4>
+      <p>Neural networks with many layers ("deep" architectures) capable of learning hierarchical feature
+      representations directly from raw data such as images, audio, or text.</p>
+    </section>
+    <section id="algos" class="mb-5">
+      <h4>ML Algorithms</h4>
+      <ul>
+        <li>Linear & Logistic Regression</li>
+        <li>Decision Trees & Random Forests</li>
+        <li>K-Means Clustering</li>
+        <li>Support Vector Machines</li>
+        <li>K-Nearest Neighbors</li>
+      </ul>
+    </section>
+  </div>
+</div>
+{% endblock %}

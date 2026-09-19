@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}Quiz - Prepify AI{% endblock %}
+{% block content %}
+<h3 class="mb-4">📝 Take a Quiz</h3>
+<div id="module-select" class="row g-3 mb-4"></div>
+<div id="quiz-area"></div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let quizzes = [];
+
+fetch("/api/quizzes").then(r => r.json()).then(data => {
+  quizzes = data;
+  const container = document.getElementById("module-select");
+  quizzes.forEach(q => {
+    container.innerHTML += `
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h6>${q.title}</h6>
+          <button class="btn btn-outline-primary btn-sm" onclick="loadQuiz('${q.module_id}')">Start</button>
+        </div>
+      </div>`;
+  });
+});
+
+function loadQuiz(moduleId) {
+  const quiz = quizzes.find(q => q.module_id === moduleId);
+  const area = document.getElementById("quiz-area");
+  let html = `<h5>${quiz.title}</h5><form id="quiz-form">`;
+  quiz.questions.forEach(q => {
+    html += `<div class="mb-3"><p>${q.id}. ${q.question}</p>`;
+    q.options.forEach(opt => {
+      html += `
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q${q.id}" value="${opt}">
+          <label class="form-check-label">${opt}</label>
+        </div>`;
+    });
+    html += `</div>`;
+  });
+  html += `<button type="button" class="btn btn-primary" onclick="submitQuiz('${moduleId}')">Submit Quiz</button></form>
+           <div id="quiz-result" class="mt-3"></div>`;
+  area.innerHTML = html;
+}
+
+async function submitQuiz(moduleId) {
+  const quiz = quizzes.find(q => q.module_id === moduleId);
+  const answers = {};
+  quiz.questions.forEach(q => {
+    const selected = document.querySelector(`input[name="q${q.id}"]:checked`);
+    if (selected) answers[q.id] = selected.value;
+  });
+
+  const res = await fetch("/api/quiz/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ module_id: moduleId, answers })
+  });
+  const data = await res.json();
+  document.getElementById("quiz-result").innerHTML =
+    `<div class="alert alert-info">Score: ${data.score} / ${data.total}</div>`;
+}
+</script>
+{% endblock %}

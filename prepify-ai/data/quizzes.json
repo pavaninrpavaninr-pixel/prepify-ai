@@ -1,0 +1,67 @@
+[
+  {
+    "module_id": "ai_basics",
+    "title": "AI & ML Basics",
+    "questions": [
+      {
+        "id": 1,
+        "question": "What does 'ML' stand for?",
+        "options": ["Machine Learning", "Meta Logic", "Model Language", "Managed Learning"],
+        "answer": "Machine Learning"
+      },
+      {
+        "id": 2,
+        "question": "Which of these is a supervised learning task?",
+        "options": ["Clustering", "Classification", "Dimensionality Reduction", "Association Rules"],
+        "answer": "Classification"
+      },
+      {
+        "id": 3,
+        "question": "Which algorithm is commonly used for classification?",
+        "options": ["K-Means", "Logistic Regression", "PCA", "Apriori"],
+        "answer": "Logistic Regression"
+      },
+      {
+        "id": 4,
+        "question": "What is 'overfitting'?",
+        "options": [
+          "Model performs well on unseen data",
+          "Model performs well on training data but poorly on unseen data",
+          "Model has too few parameters",
+          "Model trains too fast"
+        ],
+        "answer": "Model performs well on training data but poorly on unseen data"
+      },
+      {
+        "id": 5,
+        "question": "Which of these is an unsupervised learning technique?",
+        "options": ["Linear Regression", "K-Means Clustering", "Decision Trees", "Random Forest"],
+        "answer": "K-Means Clustering"
+      }
+    ]
+  },
+  {
+    "module_id": "python_basics",
+    "title": "Python Fundamentals",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Which keyword defines a function in Python?",
+        "options": ["func", "def", "function", "lambda"],
+        "answer": "def"
+      },
+      {
+        "id": 2,
+        "question": "What is the output type of len([1, 2, 3])?",
+        "options": ["list", "int", "str", "tuple"],
+        "answer": "int"
+      },
+      {
+        "id": 3,
+        "question": "Which data structure is immutable in Python?",
+        "options": ["list", "dict", "tuple", "set"],
+        "answer": "tuple"
+      }
+    ]
+  }
+]

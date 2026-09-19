@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Coding Practice - Prepify AI{% endblock %}
+{% block content %}
+<h3 class="mb-4">💻 Coding Platform</h3>
+<div class="row g-3">
+  {% for p in problems %}
+  <div class="col-md-4">
+    <div class="card p-3 h-100">
+      <a href="{{ url_for('problem_page', pid=p.id) }}" class="fw-bold">{{ p.title }}</a>
+      <span class="text-muted">Difficulty:
+        <span class="{% if p.difficulty == 'Easy' %}text-success{% elif p.difficulty == 'Medium' %}text-warning{% else %}text-danger{% endif %}">
+          {{ p.difficulty }}
+        </span>
+      </span>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
