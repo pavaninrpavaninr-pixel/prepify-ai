@@ -395,9 +395,7 @@ def api_chat():
     return jsonify({"reply": reply})
 
 
+init_db()
+
 if __name__ == "__main__":
-    if not os.path.exists(DB_PATH):
-        init_db()
-    else:
-        init_db()  # safe: CREATE TABLE IF NOT EXISTS
         app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 10000)))
